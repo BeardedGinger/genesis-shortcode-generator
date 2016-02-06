@@ -17,3 +17,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+
+include_once( 'includes/Main.php' );
+
+function genesis_shortcode_generator() {
+	new GingerBeard_Main();
+}
+
+genesis_shortcode_generator();
