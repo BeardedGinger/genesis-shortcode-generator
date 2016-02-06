@@ -47,6 +47,8 @@ class GingerBeard_Main {
 		$this->get_shortcode_files();
 
 		add_shortcode( 'genesis_column', array( GingerBeard_Columns::instance(), 'shortcode_build' ) );
+		add_shortcode( 'genesis_featured_page', array( GingerBeard_Featured_Page::instance(), 'shortcode_build' ) );
+		add_shortcode( 'genesis_featured_post', array( GingerBeard_Featured_Post::instance(), 'shortcode_build' ) );
 	}
 
 	/**
