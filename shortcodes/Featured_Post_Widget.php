@@ -42,14 +42,14 @@ class GingerBeard_Featured_Post {
 		'gravatar_size'           => '',
 		'show_title'              => 1,
 		'show_byline'             => 0,
-		'post_info'               => '[post_date] ' . __( 'By', 'gingerbeard-shortcodes' ) . ' [post_author_posts_link] [post_comments]',
+		'post_info'               => '[post_date] By [post_author_posts_link] [post_comments]',
 		'show_content'            => 'excerpt',
 		'content_limit'           => '',
-		'more_text'               => __( '[Read More...]', 'gingerbeard-shortcodes' ),
+		'more_text'               => '[Read More...]',
 		'extra_num'               => '',
 		'extra_title'             => '',
 		'more_from_category'      => '',
-		'more_from_category_text' => __( 'More Posts from this Category', 'gingerbeard-shortcodes' ),
+		'more_from_category_text' => 'More Posts from this Category',
 	);
 
 	public function shortcode_build( $atts, $content = 'null' ) {

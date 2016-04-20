@@ -19,9 +19,18 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 include_once( 'includes/Main.php' );
+include_once( 'admin/GingerBeard_Admin.php' );
 
 function genesis_shortcode_generator() {
 	new GingerBeard_Main();
 }
 
 genesis_shortcode_generator();
+
+function genesis_shortcode_generator_admin() {
+	new GingerBeard_Genesis_Shortcodes_Admin();
+}
+
+if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
+	genesis_shortcode_generator_admin();
+}

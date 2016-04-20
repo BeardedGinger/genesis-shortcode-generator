@@ -33,7 +33,7 @@ class GingerBeard_User_Profile {
 		'author_info'    => '',
 		'bio_text'       => '',
 		'page'           => '',
-		'page_link_text' => __( 'Read More', 'gingerbeard-shortcodes' ) . '&#x02026;',
+		'page_link_text' => 'Read More &#x02026;',
 		'posts_link'     => '',
 	);
 

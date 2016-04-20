@@ -49,6 +49,9 @@ class GingerBeard_Main {
 		add_shortcode( 'genesis_column', array( GingerBeard_Columns::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_featured_page', array( GingerBeard_Featured_Page::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_featured_post', array( GingerBeard_Featured_Post::instance(), 'shortcode_build' ) );
+		add_shortcode( 'genesis_user_profile', array( GingerBeard_User_Profile::instance(), 'shortcode_build' ) );
+
+		add_filter( 'the_content', array( $this, 'remove_empty_tags' ) );
 	}
 
 	/**
@@ -63,6 +66,25 @@ class GingerBeard_Main {
 		require plugin_dir_path( __FILE__ ) . '../shortcodes/Featured_Post_Widget.php';
 		require plugin_dir_path( __FILE__ ) . '../shortcodes/User_Profile_Widget.php';
 
+	}
+
+	/**
+	 * Remove unwanted empty <p></p> from custom shortcodes
+	 *
+	 * @link 	https://gist.github.com/bitfade/4555047
+	 * @since	1.1.0
+	 */
+	public function remove_empty_tags( $content ) {
+		// array of custom shortcodes requiring the fix
+		$block = join("|",array('genesis_column'));
+
+		// opening tag
+		$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
+
+		// closing tag
+		$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
+
+		return $rep;
 	}
 
 }
