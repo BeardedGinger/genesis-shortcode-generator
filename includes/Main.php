@@ -15,7 +15,7 @@ class GingerBeard_Main {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '2.0.0';
+	const VERSION = '2.0.1';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings

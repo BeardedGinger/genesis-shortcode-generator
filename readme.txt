@@ -3,20 +3,23 @@ Contributors: joshlimecuda
 Donate link: http://joshmallard.com
 Tags: shortcodes, genesis
 Requires at least: 3.5.1
-Tested up to: 4.5
-Stable tag: 2.0.0
+Tested up to: 4.5.1
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The GingerBeard Shortcodes plugin allows you to quickly add any default Genesis shortcodes as well as column shortcodes from your WYSIWYG
-
+The Genesis Shortcode Generator plugin allows you to quickly add any default Genesis shortcodes, columns, and widgets to your content via an added button to your WordPress WYSIWYG
 == Description ==
 
-This plugin adds a button to your WYSIWYG allowing for quick addition of default [Genesis Shortcodes](http://my.studiopress.com/docs/shortcode-reference/), Genesis Widgets, as well as column shortcodes.
+Quickly add dynamic elements to the content on your Genesis websites.
 
-**Note**
+This plugin adds a button to any WYSIWYG on your site and allows you to quickly add:
 
-The columns shortcodes require that the first column in the series contains a `position=“first”` within the shortcode.
+* Columns
+* The default [Genesis Shortcodes](http://my.studiopress.com/docs/shortcode-reference/)
+* The default Genesis Widgets
+
+to your site content.
 
 == Installation ==
 
@@ -49,6 +52,10 @@ The columns shortcodes require that the first column in the series contains a `p
 
 
 == Changelog ==
+
+= 2.0.1 =
+* Add back the "gb_clear" shortcode
+* Update descriptions
 
 = 2.0.0 =
 * Moved shortcode functions to their own classes (transition for simpler customization and extension)
