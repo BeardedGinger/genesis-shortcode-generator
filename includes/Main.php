@@ -46,6 +46,7 @@ class GingerBeard_Main {
 		// Get the necessary shortcode files
 		$this->get_shortcode_files();
 
+		add_shortcode( 'gb_clear', array( GingerBeard_Clear::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_column', array( GingerBeard_Columns::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_featured_page', array( GingerBeard_Featured_Page::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_featured_post', array( GingerBeard_Featured_Post::instance(), 'shortcode_build' ) );
@@ -61,6 +62,7 @@ class GingerBeard_Main {
 	 */
 	public function get_shortcode_files() {
 
+		require plugin_dir_path( __FILE__ ) . '../shortcodes/Clear.php';
 		require plugin_dir_path( __FILE__ ) . '../shortcodes/Columns.php';
 		require plugin_dir_path( __FILE__ ) . '../shortcodes/Featured_Page_Widget.php';
 		require plugin_dir_path( __FILE__ ) . '../shortcodes/Featured_Post_Widget.php';
