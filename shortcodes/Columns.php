@@ -27,7 +27,7 @@ class GingerBeard_Columns {
 	 *
 	 * @since 2.0.0
 	 */
-	public function shortcode_build( $atts, $content = 'null' ) {
+	public function shortcode_build( $atts, $content = null ) {
 		extract( shortcode_atts( array(
         	'size' => '',
         	'position' => ''
@@ -43,6 +43,52 @@ class GingerBeard_Columns {
     	$genesis_column = '<div class="' . $genesis_column_atts . '">' . do_shortcode( $content ) . '</div>';
 
     	return $genesis_column;
+	}
+
+	/**
+	 * Shortode UI
+	 *
+	 * @since 2.1.0
+	 */
+	public function shortcode_ui() {
+
+		$fields = array(
+			array(
+				'label' 	=> __( 'Size', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'size',
+				'type' 		=> 'select',
+				'options' 	=> array(
+					'' 					=> __( 'Select Column Size', 'gingerbeard-shortcodes' ),
+					'one-half' 			=> __( 'One Half', 'gingerbeard-shortcodes' ),
+					'one-third' 		=> __( 'One Third', 'gingerbeard-shortcodes' ),
+					'one-fourth' 		=> __( 'One Fourth', 'gingerbeard-shortcodes' ),
+					'one-sixth'			=> __( 'One Sixth', 'gingerbeard-shortcodes' ),
+					'two-thirds' 		=> __( 'Two Thirds', 'gingerbeard-shortcodes' ),
+					'three-fourths' 	=> __( 'Three Fourths', 'gingerbeard-shortcodes' ),
+					'five-sixths' 		=> __( 'Five Sixths', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Position', 'gingerbeard-shortcodes' ),
+				'attr'		=> 'position',
+				'type' 		=> 'radio',
+				'options' 	=> array(
+					'first' 	=> __( 'First', 'gingerbeard-shortcodes' )
+				),
+			)
+
+		);
+
+		$shortcode_ui_args = array(
+			'label' 			=> __( 'Genesis Columns', 'gingerbeard-shortcodes' ),
+			'attrs' 			=> $fields,
+			'inner_content' 	=> array(
+				'label' 		=> __( 'Column Content', 'gingerbeard-shortcodes' ),
+				'description' 	=> __( 'Content to be displayed in this column', 'gingerbeard-shortcodes' )
+			)
+		);
+
+		shortcode_ui_register_for_shortcode( 'genesis_column', $shortcode_ui_args );
 	}
 
 }
