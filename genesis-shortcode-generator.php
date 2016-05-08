@@ -3,7 +3,7 @@
  * Plugin Name:       Genesis Shortcode Generator
  * Plugin URI:        http://joshmallard.com
  * Description:       Supercharge the possibilities for WordPress content without bombarding users with thousands of options they'll never need or use
- * Version:           2.0.0
+ * Version:           2.1.0
  * Author:            Josh Mallard
  * Author URI:        http://joshmallard.com
  * Text Domain:       gingerbeard-shortcodes

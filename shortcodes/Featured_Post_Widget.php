@@ -11,6 +11,11 @@ class GingerBeard_Featured_Post {
 
 	protected $args = array();
 
+	/**
+	 * Used for getting an instance of this class
+	 *
+	 * @since 2.0.0
+	 */
 	public static function instance() {
 		if ( empty( self::$instance ) ) {
 			self::$instance = new self();
@@ -52,6 +57,11 @@ class GingerBeard_Featured_Post {
 		'more_from_category_text' => 'More Posts from this Category',
 	);
 
+	/**
+	 * Build the shortcode
+	 *
+	 * @since 2.0.0
+	 */
 	public function shortcode_build( $atts, $content = 'null' ) {
 		$this->args = shortcode_atts( $this->default_args, $atts, 'genesis_featured_post' );
 

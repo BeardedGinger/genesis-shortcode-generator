@@ -11,6 +11,11 @@ class GingerBeard_Featured_Page {
 
 	protected $args = array();
 
+	/**
+	 * Used for getting an instance of this class
+	 *
+	 * @since 2.0.0
+	 */
 	public static function instance() {
 		if ( empty( self::$instance ) ) {
 			self::$instance = new self();
@@ -37,6 +42,11 @@ class GingerBeard_Featured_Page {
 		'more_text'       => ''
 	);
 
+	/**
+	 * Build the shortcode
+	 *
+	 * @since 2.0.0
+	 */
 	public function shortcode_build( $atts, $content = 'null' ) {
 		$this->args = shortcode_atts( $this->default_args, $atts, 'genesis_featured_page' );
 

@@ -11,6 +11,11 @@ class GingerBeard_User_Profile {
 
 	protected $args = array();
 
+	/**
+	 * Used for getting an instance of this class
+	 *
+	 * @since 2.0.0
+	 */
 	public static function instance() {
 		if ( empty( self::$instance ) ) {
 			self::$instance = new self();
@@ -37,6 +42,11 @@ class GingerBeard_User_Profile {
 		'posts_link'     => '',
 	);
 
+	/**
+	 * Build the shortcode
+	 *
+	 * @since 2.0.0
+	 */
 	public function shortcode_build( $atts, $content = 'null' ) {
 		$this->args = shortcode_atts( $this->default_args, $atts, 'genesis_user_profile' );
 
