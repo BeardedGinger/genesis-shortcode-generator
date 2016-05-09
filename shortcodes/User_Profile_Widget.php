@@ -58,4 +58,47 @@ class GingerBeard_User_Profile {
 
 	}
 
+	/**
+	 * Shortode UI
+	 *
+	 * @since 2.1.0
+	 */
+	public function shortcode_ui() {
+
+		$fields = array(
+			array(
+				'label' 	=> __( 'Title', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'title',
+				'type' 		=> 'text'
+			),
+			array(
+				'label' 	=> __( 'Alignment', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'alignment',
+				'type' 		=> 'select',
+				'options' 	=> array(
+					'left' 		=> __( 'Left', 'gingerbeard-shortcodes' ),
+					'right' 	=> __( 'Right', 'gingerbeard-shortcodes' ),
+					'center' 	=> __( 'Center', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'User', 'gingerbeard-shortcode' ),
+				'attr' 		=> 'user',
+				'type' 		=> 'number'
+			),
+			array(
+				'label' 	=> __( 'Gravatar Size', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'size',
+				'type' 		=> 'number'
+			)
+		);
+
+		$shortcode_ui_args = array(
+			'label' 			=> __( 'Genesis User Profile', 'gingerbeard-shortcodes' ),
+			'attrs' 			=> $fields
+		);
+
+		shortcode_ui_register_for_shortcode( 'genesis_user_profile', $shortcode_ui_args );
+	}
+
 }
