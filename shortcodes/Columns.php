@@ -71,7 +71,7 @@ class GingerBeard_Columns {
 			array(
 				'label' 	=> __( 'Position', 'gingerbeard-shortcodes' ),
 				'attr'		=> 'position',
-				'type' 		=> 'radio',
+				'type' 		=> 'checkbox',
 				'options' 	=> array(
 					'first' 	=> __( 'First', 'gingerbeard-shortcodes' )
 				),

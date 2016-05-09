@@ -58,4 +58,84 @@ class GingerBeard_Featured_Page {
 
 	}
 
+	/**
+	 * Shortode UI
+	 *
+	 * @since 2.1.0
+	 */
+	public function shortcode_ui() {
+
+		$fields = array(
+			array(
+				'label' 	=> __( 'Title', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'title',
+				'type' 		=> 'text'
+			),
+			array(
+				'label' 	=> __( 'Page', 'gingerbeard-shortcodes' ),
+				'attr'		=> 'page_id',
+				'type' 		=> 'post_select',
+				'query' 	=> array( 'post_type' => 'page' ),
+				'multiple' 	=> false
+			),
+			array(
+				'label' 	=> __( 'Hide Image?', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'show_image',
+				'type' 		=> 'checkbox',
+				'options' 	=> array(
+					'false' 		=> __( 'False', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Image Alignment', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'image_alignment',
+				'type' 		=> 'select',
+				'options' 	=> array(
+					'left' 		=> __( 'Left', 'gingerbeard-shortcodes' ),
+					'right' 	=> __( 'Right', 'gingerbeard-shortcodes' ),
+					'center' 	=> __( 'Center', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Image Size', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'image_size',
+				'type' 		=> 'number'
+			),
+			array(
+				'label' 	=> __( 'Hide Title', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'show_title',
+				'type' 		=> 'checkbox',
+				'options' 	=> array(
+					'false' 		=> __( 'False', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Hide Content', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'show_content',
+				'type' 		=> 'checkbox',
+				'options' 	=> array(
+					'false' 		=> __( 'False', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Content Limit', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'content_limit',
+				'type' 		=> 'number'
+			),
+			array(
+				'label' 	=> __( 'Read More Text', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'more_text',
+				'type' 		=> 'text'
+			)
+
+		);
+
+		$shortcode_ui_args = array(
+			'label' 			=> __( 'Genesis Featured Page', 'gingerbeard-shortcodes' ),
+			'attrs' 			=> $fields
+		);
+
+		shortcode_ui_register_for_shortcode( 'genesis_featured_page', $shortcode_ui_args );
+	}
+
 }
