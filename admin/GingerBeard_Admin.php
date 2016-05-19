@@ -60,7 +60,7 @@ class GingerBeard_Genesis_Shortcodes_Admin {
         /* Check that the user hasn't already clicked to ignore the message */
 		if ( ! get_user_meta($user_id, 'genesis_shortcode_ignore_notice') && !function_exists('genesis') ) {
         	echo '<div class="updated"><p>';
-        		printf(__('This plugin only works with the <a href="http://joshmallard.com/genesis-link">Genesis Framework</a> | <a href="%1$s">Hide Notice</a>'), '?genesis_shortcode_nag_ignore=0');
+        		printf(__('The Shortcode Generator plugin is built to be used specifically with the <a href="http://joshmallard.com/genesis-link">Genesis Framework</a> | <a href="%1$s">Hide Notice</a>'), '?genesis_shortcode_nag_ignore=0');
         	echo "</p></div>";
 		}
 	}
