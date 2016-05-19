@@ -1,25 +1,32 @@
-=== Genesis Shortcode Generator ===
+=== Shortcode Generator for Genesis ===
 Contributors: joshlimecuda
 Donate link: http://joshmallard.com
-Tags: shortcodes, genesis
+Tags: shortcodes, genesis, columns, genesis widgets
 Requires at least: 3.5.1
 Tested up to: 4.5.1
 Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Genesis Shortcode Generator plugin allows you to quickly add any default Genesis shortcodes, columns, and widgets to your content via an added button to your WordPress WYSIWYG
+Adds a simple interface for configuring and inserting default Genesis shortcodes, columns, and widgets as shortcodes within your site content
+
 == Description ==
 
-Quickly add dynamic elements to the content on your Genesis websites.
+The Shortcode Generator for Genesis adds a button to your WYSIWYG that allows you to quickly configure and add dynamic content to your content via shortcodes.
 
-This plugin adds a button to any WYSIWYG on your site and allows you to quickly add:
+The plugin integrates with the Shortcake UI plugin to allow for simple configuration of shortcode settings when including them in your content. Also, do you hate seeing your WYSIWYG littered with [traditional_shortcode] placers? The integration with Shortcake UI also allows you to see the actual output of your shortcode directly within the WYSIWYG.
+
+**Available shortcodes:**
 
 * Columns
+** default 2, 3, 4, & 6 column layouts available within genesis styles
+** addition of a 5 column option)
 * The default [Genesis Shortcodes](http://my.studiopress.com/docs/shortcode-reference/)
 * The default Genesis Widgets
+** Featured Page Widget
+** Featured Post Widget
+** User Profile Widget
 
-to your site content.
 
 == Installation ==
 
@@ -52,6 +59,10 @@ to your site content.
 
 
 == Changelog ==
+
+= 2.1.0 =
+* Renaming plugin from Genesis Shortcode Generator to Shortcode Generator for Genesis
+* Integration with Shortcode UI
 
 = 2.0.1 =
 * Add back the "gb_clear" shortcode

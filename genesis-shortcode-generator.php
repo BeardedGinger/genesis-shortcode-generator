@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       Genesis Shortcode Generator
+ * Plugin Name:       Shortcode Generator for Genesis
  * Plugin URI:        http://joshmallard.com
- * Description:       Supercharge the possibilities for WordPress content without bombarding users with thousands of options they'll never need or use
+ * Description:       Adds a simple interface for configuring and inserting default Genesis shortcodes, columns, and widgets as shortcodes within your site content
  * Version:           2.1.0
  * Author:            Josh Mallard
  * Author URI:        http://joshmallard.com
