@@ -48,9 +48,13 @@ class GingerBeard_Columns {
 	/**
 	 * Shortode UI
 	 *
-	 * @since 2.1.0
+	 * @since     2.1.0
+	 * @access    public
 	 */
 	public function shortcode_ui() {
+
+		if( ! function_exists( 'shortcode_ui_register_for_shortcode' ) )
+			return;
 
 		$fields = array(
 			array(
@@ -62,9 +66,11 @@ class GingerBeard_Columns {
 					'one-half' 			=> __( 'One Half', 'gingerbeard-shortcodes' ),
 					'one-third' 		=> __( 'One Third', 'gingerbeard-shortcodes' ),
 					'one-fourth' 		=> __( 'One Fourth', 'gingerbeard-shortcodes' ),
+					'one-fifth'			=> __( 'One Fifth', 'gingerbeard-shortcodes' ),
 					'one-sixth'			=> __( 'One Sixth', 'gingerbeard-shortcodes' ),
 					'two-thirds' 		=> __( 'Two Thirds', 'gingerbeard-shortcodes' ),
 					'three-fourths' 	=> __( 'Three Fourths', 'gingerbeard-shortcodes' ),
+					'four-fifths' 		=> __( 'Four Fifths', 'gingerbeard-shortcodes' ),
 					'five-sixths' 		=> __( 'Five Sixths', 'gingerbeard-shortcodes' )
 				)
 			),

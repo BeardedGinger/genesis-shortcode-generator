@@ -63,6 +63,7 @@ The plugin integrates with the Shortcake UI plugin to allow for simple configura
 = 2.1.0 =
 * Renaming plugin from Genesis Shortcode Generator to Shortcode Generator for Genesis
 * Integration with Shortcode UI
+* Update admin notice wording if Genesis isn't installed
 
 = 2.0.1 =
 * Add back the "gb_clear" shortcode

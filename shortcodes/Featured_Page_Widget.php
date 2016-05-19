@@ -65,6 +65,9 @@ class GingerBeard_Featured_Page {
 	 */
 	public function shortcode_ui() {
 
+		if( ! function_exists( 'shortcode_ui_register_for_shortcode' ) )
+			return;
+
 		$fields = array(
 			array(
 				'label' 	=> __( 'Title', 'gingerbeard-shortcodes' ),
