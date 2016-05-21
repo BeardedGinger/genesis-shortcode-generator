@@ -56,6 +56,7 @@ class GingerBeard_Main {
 		//* Add the shortcode UI
 		add_action( 'register_shortcode_ui', array( GingerBeard_Columns::instance(), 'shortcode_ui' ) );
 		add_action( 'register_shortcode_ui', array( GingerBeard_Featured_Page::instance(), 'shortcode_ui' ) );
+		add_action( 'register_shortcode_ui', array( GingerBeard_Featured_Post::instance(), 'shortcode_ui' ) );
 
 		add_filter( 'the_content', array( $this, 'remove_empty_tags' ) );
 

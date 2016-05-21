@@ -39,7 +39,7 @@ class GingerBeard_Featured_Post {
 		'order'                   => '',
 		'exclude_displayed'       => 0,
 		'exclude_sticky'          => 0,
-		'show_image'              => 1,
+		'show_image'              => 0,
 		'image_alignment'         => '',
 		'image_size'              => '',
 		'show_gravatar'           => 0,
@@ -83,11 +83,84 @@ class GingerBeard_Featured_Post {
 		if( ! function_exists( 'shortcode_ui_register_for_shortcode' ) )
 			return;
 
+		$category_options = array(
+			'' => 'All Categories'
+		);
+
+		$categories = get_terms( 'category' );
+		$count = 0;
+
+		foreach( $categories as $category ) {
+			$category_options[$category->term_id] = $category->name;
+		}
+
 		$fields = array(
 			array(
 				'label' 	=> __( 'Title', 'gingerbeard-shortcodes' ),
 				'attr' 		=> 'title',
 				'type' 		=> 'text'
+			),
+			array(
+				'label' 	=> __( 'Category', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'posts_cat',
+				'type' 		=> 'select',
+				'options' 	=> $category_options
+			),
+			array(
+				'label' 	=> __( 'Number of Posts to Show', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'posts_num',
+				'type' 		=> 'number',
+			),
+			array(
+				'label' 	=> __( 'Number of Posts to Offset', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'posts_offset',
+				'type' 		=> 'number',
+			),
+			array(
+				'label' 	=> __( 'Order By', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'orderby',
+				'type' 		=> 'select',
+				'options' 	=> array(
+					'date' 				=> __( 'Date', 'gingerbeard-shortcodes' ),
+					'title' 			=> __( 'Title', 'gingerbeard-shortcodes' ),
+					'parent' 			=> __( 'Parent', 'gingerbeard-shortcodes' ),
+					'ID' 				=> __( 'ID', 'gingerbeard-shortcodes' ),
+					'comment_count' 	=> __( 'Comment Count', 'gingerbeard-shortcodes' ),
+					'rand' 				=> __( 'Random', 'gingerbeard-shortcodes' ),
+				)
+			),
+			array(
+				'label' 	=> __( 'Sort Order', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'order',
+				'type' 		=> 'select',
+				'options' 	=> array(
+					'DESC' 				=> __( 'Descending (3,2,1)', 'gingerbeard-shortcodes' ),
+					'ASC' 				=> __( 'Ascending(1,2,3)', 'gingerbeard-shortcodes' ),
+				)
+			),
+			array(
+				'label' 	=> __( 'Exclude Previously Displayed Posts?', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'exclude_displayed',
+				'type' 		=> 'checkbox',
+				'options' 	=> array(
+					'1' 		=> __( 'True', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Exclude Sticky Posts?', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'exclude_sticky',
+				'type' 		=> 'checkbox',
+				'options' 	=> array(
+					'1' 		=> __( 'True', 'gingerbeard-shortcodes' )
+				)
+			),
+			array(
+				'label' 	=> __( 'Show Author Gravatar', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'show_gravatar',
+				'type' 		=> 'checkbox',
+				'options' 	=> array(
+					'1' 		=> __( 'True', 'gingerbeard-shortcodes' )
+				)
 			),
 		);
 
