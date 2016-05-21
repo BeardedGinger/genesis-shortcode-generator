@@ -162,6 +162,17 @@ class GingerBeard_Featured_Post {
 					'1' 		=> __( 'True', 'gingerbeard-shortcodes' )
 				)
 			),
+			array(
+				'label' 	=> __( 'Gravatar Size', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'gravatar_size',
+				'type' 		=> 'select',
+				'options' 	=> array(
+					'45' 		=> __( 'Small (45px)', 'gingerbeard-shortcodes' ),
+					'65' 		=> __( 'Medium (65px)', 'gingerbeard-shortcodes' ),
+					'85' 		=> __( 'Large (85px)', 'gingerbeard-shortcodes' ),
+					'125' 		=> __( 'Extra Large (125px)', 'gingerbeard-shortcodes' ),
+				)
+			),
 		);
 
 		$shortcode_ui_args = array(
