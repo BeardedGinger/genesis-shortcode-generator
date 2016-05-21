@@ -50,7 +50,7 @@ class GingerBeard_Main {
 		add_shortcode( 'gb_clear', array( GingerBeard_Clear::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_column', array( GingerBeard_Columns::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_featured_page', array( GingerBeard_Featured_Page::instance(), 'shortcode_build' ) );
-		add_shortcode( 'genesis_featured_post', array( GingerBeard_Featured_Post::instance(), 'shortcode_build' ) );
+		add_shortcode( 'genesis_featured_posts', array( GingerBeard_Featured_Post::instance(), 'shortcode_build' ) );
 		add_shortcode( 'genesis_user_profile', array( GingerBeard_User_Profile::instance(), 'shortcode_build' ) );
 
 		//* Add the shortcode UI
@@ -58,6 +58,9 @@ class GingerBeard_Main {
 		add_action( 'register_shortcode_ui', array( GingerBeard_Featured_Page::instance(), 'shortcode_ui' ) );
 
 		add_filter( 'the_content', array( $this, 'remove_empty_tags' ) );
+
+		//* Deprecated
+		add_shortcode( 'genesis_featured_post', array( GingerBeard_Featured_Post::instance(), 'shortcode_build' ) );
 	}
 
 	/**

@@ -33,11 +33,11 @@ class GingerBeard_Featured_Page {
 	protected $default_args = array(
 		'title'           => '',
 		'page_id'         => '',
-		'show_image'      => true,
+		'show_image'      => false,
 		'image_alignment' => '',
 		'image_size'      => '',
-		'show_title'      => true,
-		'show_content'    => true,
+		'show_title'      => false,
+		'show_content'    => false,
 		'content_limit'   => '',
 		'more_text'       => ''
 	);
@@ -82,11 +82,11 @@ class GingerBeard_Featured_Page {
 				'multiple' 	=> false
 			),
 			array(
-				'label' 	=> __( 'Hide Image?', 'gingerbeard-shortcodes' ),
+				'label' 	=> __( 'Show Featured Image', 'gingerbeard-shortcodes' ),
 				'attr' 		=> 'show_image',
 				'type' 		=> 'checkbox',
 				'options' 	=> array(
-					'false' 		=> __( 'False', 'gingerbeard-shortcodes' )
+					'true' 		=> __( 'True', 'gingerbeard-shortcodes' )
 				)
 			),
 			array(
@@ -94,6 +94,7 @@ class GingerBeard_Featured_Page {
 				'attr' 		=> 'image_alignment',
 				'type' 		=> 'select',
 				'options' 	=> array(
+					'none' 		=> __( '- None -', 'gingerbeard-shortcodes' ),
 					'left' 		=> __( 'Left', 'gingerbeard-shortcodes' ),
 					'right' 	=> __( 'Right', 'gingerbeard-shortcodes' ),
 					'center' 	=> __( 'Center', 'gingerbeard-shortcodes' )
@@ -105,28 +106,28 @@ class GingerBeard_Featured_Page {
 				'type' 		=> 'number'
 			),
 			array(
-				'label' 	=> __( 'Hide Title', 'gingerbeard-shortcodes' ),
+				'label' 	=> __( 'Show Page Title', 'gingerbeard-shortcodes' ),
 				'attr' 		=> 'show_title',
 				'type' 		=> 'checkbox',
 				'options' 	=> array(
-					'false' 		=> __( 'False', 'gingerbeard-shortcodes' )
+					'true' 		=> __( 'True', 'gingerbeard-shortcodes' )
 				)
 			),
 			array(
-				'label' 	=> __( 'Hide Content', 'gingerbeard-shortcodes' ),
+				'label' 	=> __( 'Show Page Content', 'gingerbeard-shortcodes' ),
 				'attr' 		=> 'show_content',
 				'type' 		=> 'checkbox',
 				'options' 	=> array(
-					'false' 		=> __( 'False', 'gingerbeard-shortcodes' )
+					'true' 		=> __( 'True', 'gingerbeard-shortcodes' )
 				)
 			),
 			array(
-				'label' 	=> __( 'Content Limit', 'gingerbeard-shortcodes' ),
+				'label' 	=> __( 'Content Character Limit', 'gingerbeard-shortcodes' ),
 				'attr' 		=> 'content_limit',
-				'type' 		=> 'number'
+				'type' 		=> 'text'
 			),
 			array(
-				'label' 	=> __( 'Read More Text', 'gingerbeard-shortcodes' ),
+				'label' 	=> __( 'More Text', 'gingerbeard-shortcodes' ),
 				'attr' 		=> 'more_text',
 				'type' 		=> 'text'
 			)

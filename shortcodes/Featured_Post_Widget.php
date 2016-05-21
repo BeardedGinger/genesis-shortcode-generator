@@ -73,4 +73,30 @@ class GingerBeard_Featured_Post {
 
 	}
 
+	/**
+	 * Shortode UI
+	 *
+	 * @since 2.1.0
+	 */
+	public function shortcode_ui() {
+
+		if( ! function_exists( 'shortcode_ui_register_for_shortcode' ) )
+			return;
+
+		$fields = array(
+			array(
+				'label' 	=> __( 'Title', 'gingerbeard-shortcodes' ),
+				'attr' 		=> 'title',
+				'type' 		=> 'text'
+			),
+		);
+
+		$shortcode_ui_args = array(
+			'label' 			=> __( 'Genesis Featured Posts', 'gingerbeard-shortcodes' ),
+			'attrs' 			=> $fields
+		);
+
+		shortcode_ui_register_for_shortcode( 'genesis_featured_posts', $shortcode_ui_args );
+	}
+
 }
